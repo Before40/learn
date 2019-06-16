@@ -1,0 +1,3 @@
+/home/trams/learn/openssl/build/CMakeFiles/rebuild_cache.dir
+/home/trams/learn/openssl/build/CMakeFiles/test_bio.dir
+/home/trams/learn/openssl/build/CMakeFiles/edit_cache.dir
