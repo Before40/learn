@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/trams/learn/openssl/test_bio_base64.c
+stdio.h
+-
+string.h
+-
+openssl/bio.h
+-
+openssl/evp.h
+-
+openssl/buffer.h
+-
+

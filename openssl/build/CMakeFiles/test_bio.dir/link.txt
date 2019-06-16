@@ -1,1 +1,1 @@
-/usr/bin/clang    CMakeFiles/test_bio.dir/test_bio_md.c.o  -o test_bio -lcrypto 
+/usr/bin/clang -Wall -std=c99   CMakeFiles/test_bio.dir/test_bio_md.c.o  -o test_bio -lcrypto 

@@ -1,0 +1,1 @@
+/usr/bin/clang -Wall -std=c99   CMakeFiles/test_bio_base64.dir/test_bio_base64.c.o  -o test_bio_base64 -lcrypto 

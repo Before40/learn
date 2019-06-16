@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/trams/learn/openssl/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -123,6 +123,46 @@ test_bio/fast:
 	$(MAKE) -f CMakeFiles/test_bio.dir/build.make CMakeFiles/test_bio.dir/build
 .PHONY : test_bio/fast
 
+#=============================================================================
+# Target rules for targets named test_bio_base64
+
+# Build rule for target.
+test_bio_base64: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_bio_base64
+.PHONY : test_bio_base64
+
+# fast build rule for target.
+test_bio_base64/fast:
+	$(MAKE) -f CMakeFiles/test_bio_base64.dir/build.make CMakeFiles/test_bio_base64.dir/build
+.PHONY : test_bio_base64/fast
+
+test_bio_base64.o: test_bio_base64.c.o
+
+.PHONY : test_bio_base64.o
+
+# target to build an object file
+test_bio_base64.c.o:
+	$(MAKE) -f CMakeFiles/test_bio_base64.dir/build.make CMakeFiles/test_bio_base64.dir/test_bio_base64.c.o
+.PHONY : test_bio_base64.c.o
+
+test_bio_base64.i: test_bio_base64.c.i
+
+.PHONY : test_bio_base64.i
+
+# target to preprocess a source file
+test_bio_base64.c.i:
+	$(MAKE) -f CMakeFiles/test_bio_base64.dir/build.make CMakeFiles/test_bio_base64.dir/test_bio_base64.c.i
+.PHONY : test_bio_base64.c.i
+
+test_bio_base64.s: test_bio_base64.c.s
+
+.PHONY : test_bio_base64.s
+
+# target to generate assembly for a file
+test_bio_base64.c.s:
+	$(MAKE) -f CMakeFiles/test_bio_base64.dir/build.make CMakeFiles/test_bio_base64.dir/test_bio_base64.c.s
+.PHONY : test_bio_base64.c.s
+
 test_bio_md.o: test_bio_md.c.o
 
 .PHONY : test_bio_md.o
@@ -156,9 +196,13 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test_bio"
-	@echo "... edit_cache"
+	@echo "... test_bio_base64"
+	@echo "... test_bio_base64.o"
+	@echo "... test_bio_base64.i"
+	@echo "... test_bio_base64.s"
 	@echo "... test_bio_md.o"
 	@echo "... test_bio_md.i"
 	@echo "... test_bio_md.s"
